@@ -11,76 +11,94 @@ import Icon from '@/components/ui/icon';
 
 const services = [
   {
-    icon: 'MessageCircle',
-    title: 'Постановка звуков',
-    description: 'Коррекция звукопроизношения у детей и взрослых. Работа над чистотой речи.'
+    icon: 'Smile',
+    emoji: '🎈',
+    title: 'Учимся говорить правильно',
+    description: 'Ставим звуки через весёлые игры и упражнения. Каждое занятие — маленькое приключение!'
   },
   {
-    icon: 'Brain',
-    title: 'Развитие речи',
-    description: 'Расширение словарного запаса, формирование грамматического строя речи.'
+    icon: 'BookHeart',
+    emoji: '📚',
+    title: 'Развиваем речь играя',
+    description: 'Расширяем словарный запас, учимся строить предложения. Всё в игровой форме!'
   },
   {
-    icon: 'BookOpen',
-    title: 'Обучение чтению',
-    description: 'Профилактика и коррекция дислексии. Развитие навыков чтения.'
+    icon: 'Star',
+    emoji: '⭐',
+    title: 'Учимся читать',
+    description: 'От букв к словам — интересно и легко. Читаем первые книжки вместе!'
   },
   {
-    icon: 'Users',
-    title: 'Групповые занятия',
-    description: 'Занятия в малых группах для развития коммуникативных навыков.'
+    icon: 'Heart',
+    emoji: '💙',
+    title: 'Занятия в мини-группах',
+    description: 'Играем и общаемся с друзьями. Учимся работать в команде!'
   },
   {
     icon: 'Video',
-    title: 'Онлайн консультации',
-    description: 'Удобные занятия в zoom с тем же качеством, что и очные встречи.'
+    emoji: '💻',
+    title: 'Онлайн занятия',
+    description: 'Занимаемся дома — удобно и весело! Все упражнения адаптированы для онлайна.'
   },
   {
-    icon: 'UserCheck',
-    title: 'Консультации родителей',
-    description: 'Рекомендации и домашние задания для эффективной работы.'
+    icon: 'Users',
+    emoji: '👨‍👩‍👧',
+    title: 'Консультации для родителей',
+    description: 'Помогаем мамам и папам заниматься с ребёнком дома. Даём домашние задания.'
   }
 ];
 
 const methods = [
   {
-    title: 'Артикуляционная гимнастика',
-    description: 'Специальные упражнения для укрепления мышц речевого аппарата и постановки правильного произношения.'
+    emoji: '😛',
+    title: 'Весёлая гимнастика для язычка',
+    description: 'Делаем упражнения в игровой форме! Язычок-путешественник отправляется в приключения.'
   },
   {
-    title: 'Логопедический массаж',
-    description: 'Эффективная техника для коррекции тонуса мышц артикуляционного аппарата.'
+    emoji: '🎮',
+    title: 'Игры и сказки',
+    description: 'Учимся через игру! Каждое занятие — это новая история с интересными персонажами.'
   },
   {
-    title: 'Игровые методики',
-    description: 'Занятия в игровой форме делают процесс обучения увлекательным и результативным.'
+    emoji: '🎨',
+    title: 'Творческие задания',
+    description: 'Рисуем, лепим, конструируем — развиваем мелкую моторику и речь одновременно!'
   },
   {
-    title: 'Нейропсихологический подход',
-    description: 'Комплексная работа с учетом особенностей развития высших психических функций.'
+    emoji: '🎵',
+    title: 'Логоритмика',
+    description: 'Поём песенки, танцуем, играем с ритмом. Движение помогает речи развиваться!'
   }
 ];
 
 const prices = [
   {
+    emoji: '🌟',
     type: 'Индивидуальное занятие',
     duration: '45 минут',
-    price: '2 500 ₽'
+    price: '2 500 ₽',
+    popular: true
   },
   {
-    type: 'Консультация',
+    emoji: '👥',
+    type: 'Мини-группа (2-3 ребёнка)',
     duration: '60 минут',
-    price: '3 000 ₽'
+    price: '1 500 ₽',
+    popular: false
   },
   {
-    type: 'Групповое занятие',
-    duration: '60 минут',
-    price: '1 500 ₽'
-  },
-  {
+    emoji: '💻',
     type: 'Онлайн занятие',
     duration: '45 минут',
-    price: '2 000 ₽'
+    price: '2 000 ₽',
+    popular: false
+  },
+  {
+    emoji: '👨‍👩‍👧',
+    type: 'Консультация для родителей',
+    duration: '60 минут',
+    price: '2 500 ₽',
+    popular: false
   }
 ];
 
@@ -112,8 +130,8 @@ export default function Index() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Icon name="Mic" className="text-primary" size={28} />
-              <span className="text-xl font-semibold text-foreground">Логопед</span>
+              <span className="text-3xl">🌈</span>
+              <span className="text-xl font-semibold text-foreground">Детский Логопед</span>
             </div>
             <div className="hidden md:flex gap-8">
               <button onClick={() => scrollToSection('home')} className="text-sm font-medium hover:text-primary transition-colors">Главная</button>
@@ -193,17 +211,18 @@ export default function Index() {
       <section id="home" className="pt-32 pb-20 px-4">
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-              Чистая речь — уверенность в себе
+            <div className="text-6xl mb-6 animate-bounce">🌈 🌟 🎈</div>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+              Говорим красиво и правильно!
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Профессиональная логопедическая помощь детям и взрослым. Современные методики и индивидуальный подход.
+            <p className="text-xl md:text-2xl text-foreground mb-8 max-w-2xl mx-auto font-medium">
+              Занимательные занятия для вашего ребёнка. Учимся через игру, развиваемся с удовольствием!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Dialog>
                 <DialogTrigger asChild>
-                  <Button size="lg" className="bg-gradient-to-r from-primary to-accent hover:opacity-90 text-lg px-8">
-                    Записаться на консультацию
+                  <Button size="lg" className="bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-90 text-lg px-8 shadow-lg">
+                    🎉 Записаться на занятие
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
@@ -275,20 +294,19 @@ export default function Index() {
       <section id="services" className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Услуги</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Комплексный подход к коррекции речевых нарушений
+            <div className="text-5xl mb-4">🎓</div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Чем мы занимаемся?</h2>
+            <p className="text-lg text-foreground max-w-2xl mx-auto font-medium">
+              Все занятия проходят в игровой форме — весело, интересно и эффективно!
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-all duration-300 animate-scale-in border-2 hover:border-primary/20" style={{ animationDelay: `${index * 0.1}s` }}>
+              <Card key={index} className="hover:shadow-xl hover:scale-105 transition-all duration-300 animate-scale-in border-2 hover:border-primary/30 bg-gradient-to-br from-white to-primary/5" style={{ animationDelay: `${index * 0.1}s` }}>
                 <CardHeader>
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center mb-4">
-                    <Icon name={service.icon as any} className="text-white" size={28} />
-                  </div>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
-                  <CardDescription className="text-base">{service.description}</CardDescription>
+                  <div className="text-5xl mb-4">{service.emoji}</div>
+                  <CardTitle className="text-xl mb-2">{service.title}</CardTitle>
+                  <CardDescription className="text-base leading-relaxed">{service.description}</CardDescription>
                 </CardHeader>
               </Card>
             ))}
@@ -299,15 +317,17 @@ export default function Index() {
       <section id="methods" className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Методики работы</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Проверенные техники для достижения результата
+            <div className="text-5xl mb-4">🎯</div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Как мы работаем?</h2>
+            <p className="text-lg text-foreground max-w-2xl mx-auto font-medium">
+              Используем проверенные методики, которые нравятся детям
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {methods.map((method, index) => (
-              <Card key={index} className="hover:shadow-lg transition-all duration-300 border-2 hover:border-accent/20" style={{ animationDelay: `${index * 0.1}s` }}>
+              <Card key={index} className="hover:shadow-xl hover:scale-105 transition-all duration-300 border-2 hover:border-secondary/30 bg-gradient-to-br from-white to-secondary/5" style={{ animationDelay: `${index * 0.1}s` }}>
                 <CardHeader>
+                  <div className="text-5xl mb-3">{method.emoji}</div>
                   <CardTitle className="text-2xl mb-3">{method.title}</CardTitle>
                   <CardDescription className="text-base leading-relaxed">{method.description}</CardDescription>
                 </CardHeader>
@@ -320,15 +340,20 @@ export default function Index() {
       <section id="prices" className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Цены</h2>
-            <p className="text-lg text-muted-foreground">
-              Прозрачные тарифы без скрытых платежей
+            <div className="text-5xl mb-4">🎁</div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Стоимость занятий</h2>
+            <p className="text-lg text-foreground font-medium">
+              Честные цены без скрытых платежей
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {prices.map((price, index) => (
-              <Card key={index} className="hover:shadow-lg transition-all duration-300 border-2 hover:border-primary/20">
+              <Card key={index} className={`hover:shadow-xl hover:scale-105 transition-all duration-300 border-2 ${price.popular ? 'border-primary/50 bg-gradient-to-br from-primary/5 to-accent/5' : 'hover:border-primary/20'}`}>
                 <CardHeader>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-3xl">{price.emoji}</span>
+                    {price.popular && <span className="bg-primary text-white text-xs px-2 py-1 rounded-full">Popular</span>}
+                  </div>
                   <CardTitle className="text-xl">{price.type}</CardTitle>
                   <CardDescription className="text-sm text-muted-foreground">{price.duration}</CardDescription>
                 </CardHeader>
