@@ -29,18 +29,6 @@ const services = [
     description: 'От букв к словам — интересно и легко. Читаем первые книжки вместе!'
   },
   {
-    icon: 'Heart',
-    emoji: '💙',
-    title: 'Занятия в мини-группах',
-    description: 'Играем и общаемся с друзьями. Учимся работать в команде!'
-  },
-  {
-    icon: 'Video',
-    emoji: '💻',
-    title: 'Онлайн занятия',
-    description: 'Занимаемся дома — удобно и весело! Все упражнения адаптированы для онлайна.'
-  },
-  {
     icon: 'Users',
     emoji: '👨‍👩‍👧',
     title: 'Консультации для родителей',
@@ -78,20 +66,6 @@ const prices = [
     duration: '45 минут',
     price: '2 500 ₽',
     popular: true
-  },
-  {
-    emoji: '👥',
-    type: 'Мини-группа (2-3 ребёнка)',
-    duration: '60 минут',
-    price: '1 500 ₽',
-    popular: false
-  },
-  {
-    emoji: '💻',
-    type: 'Онлайн занятие',
-    duration: '45 минут',
-    price: '2 000 ₽',
-    popular: false
   },
   {
     emoji: '👨‍👩‍👧',
@@ -210,16 +184,17 @@ export default function Index() {
 
       <section id="home" className="pt-32 pb-20 px-4">
         <div className="container mx-auto">
-          <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <div className="text-6xl mb-6 animate-bounce">🌈 🌟 🎈</div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-              Говорим красиво и правильно!
-            </h1>
-            <p className="text-xl md:text-2xl text-foreground mb-8 max-w-2xl mx-auto font-medium">
-              Занимательные занятия для вашего ребёнка. Учимся через игру, развиваемся с удовольствием!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Dialog>
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <div className="animate-fade-in text-center lg:text-left">
+              <div className="text-6xl mb-6 animate-bounce">🌈 🌟 🎈</div>
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+                Говорим красиво и правильно!
+              </h1>
+              <p className="text-xl md:text-2xl text-foreground mb-8 font-medium">
+                Занимательные занятия для вашего ребёнка. Учимся через игру, развиваемся с удовольствием!
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Dialog>
                 <DialogTrigger asChild>
                   <Button size="lg" className="bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-90 text-lg px-8 shadow-lg">
                     🎉 Записаться на занятие
@@ -283,9 +258,17 @@ export default function Index() {
                   </form>
                 </DialogContent>
               </Dialog>
-              <Button size="lg" variant="outline" onClick={() => scrollToSection('services')} className="text-lg px-8">
-                Узнать больше
-              </Button>
+                <Button size="lg" variant="outline" onClick={() => scrollToSection('services')} className="text-lg px-8">
+                  Узнать больше
+                </Button>
+              </div>
+            </div>
+            <div className="animate-scale-in hidden lg:block">
+              <img 
+                src="https://cdn.poehali.dev/projects/2917e5cc-76e2-4acb-8d01-583b8d622742/files/d5c0ce8e-d71a-4ca9-a57b-d9dfaa7d828b.jpg" 
+                alt="Детский логопед" 
+                className="rounded-3xl shadow-2xl w-full h-auto object-cover"
+              />
             </div>
           </div>
         </div>
@@ -333,6 +316,159 @@ export default function Index() {
                 </CardHeader>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="dyslexia" className="py-20 px-4 bg-gradient-to-br from-accent/10 to-primary/10">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16 animate-fade-in">
+            <div className="text-6xl mb-4">📖✨</div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Работаем с дислексией и дисграфией</h2>
+            <p className="text-lg text-foreground max-w-3xl mx-auto font-medium">
+              Помогаем детям преодолеть трудности в чтении и письме через специальные игровые методики
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <Card className="border-2 border-accent/30 bg-white/80 backdrop-blur hover:shadow-xl transition-all duration-300">
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="text-5xl">📚</div>
+                  <CardTitle className="text-2xl">Дислексия</CardTitle>
+                </div>
+                <CardDescription className="text-base leading-relaxed space-y-3">
+                  <p className="font-semibold text-foreground">Трудности с чтением? Мы поможем!</p>
+                  <ul className="space-y-2 text-left">
+                    <li className="flex items-start gap-2">
+                      <span className="text-accent text-xl">✓</span>
+                      <span>Улучшаем узнавание букв и слов</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-accent text-xl">✓</span>
+                      <span>Развиваем фонематический слух</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-accent text-xl">✓</span>
+                      <span>Учим читать плавно и с пониманием</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-accent text-xl">✓</span>
+                      <span>Игровые упражнения на каждом занятии</span>
+                    </li>
+                  </ul>
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="border-2 border-primary/30 bg-white/80 backdrop-blur hover:shadow-xl transition-all duration-300">
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="text-5xl">✍️</div>
+                  <CardTitle className="text-2xl">Дисграфия</CardTitle>
+                </div>
+                <CardDescription className="text-base leading-relaxed space-y-3">
+                  <p className="font-semibold text-foreground">Сложности с письмом? Поможем справиться!</p>
+                  <ul className="space-y-2 text-left">
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary text-xl">✓</span>
+                      <span>Исправляем ошибки на письме</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary text-xl">✓</span>
+                      <span>Развиваем мелкую моторику</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary text-xl">✓</span>
+                      <span>Формируем правильное письмо</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary text-xl">✓</span>
+                      <span>Творческие задания и прописи</span>
+                    </li>
+                  </ul>
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+
+          <div className="text-center">
+            <Card className="inline-block border-2 border-secondary/30 bg-gradient-to-br from-white to-secondary/10 p-8">
+              <div className="text-5xl mb-4">🎯</div>
+              <h3 className="text-2xl font-bold mb-3">Индивидуальный подход к каждому ребёнку</h3>
+              <p className="text-base text-muted-foreground mb-6 max-w-2xl">
+                Разрабатываем персональную программу занятий с учётом особенностей вашего ребёнка. 
+                Работаем мягко, через игру и позитивное подкрепление.
+              </p>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button size="lg" className="bg-gradient-to-r from-primary via-secondary to-accent shadow-lg">
+                    🌟 Записаться на диагностику
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+                  <DialogHeader>
+                    <DialogTitle>Запись на диагностику</DialogTitle>
+                    <DialogDescription>
+                      Первичная диагностика поможет определить индивидуальную программу занятий
+                    </DialogDescription>
+                  </DialogHeader>
+                  <form onSubmit={handleBooking} className="space-y-6">
+                    <div className="grid gap-4">
+                      <div>
+                        <Label htmlFor="name-diag">Ваше имя</Label>
+                        <Input id="name-diag" placeholder="Иван Иванов" required />
+                      </div>
+                      <div>
+                        <Label htmlFor="phone-diag">Телефон</Label>
+                        <Input id="phone-diag" type="tel" placeholder="+7 (999) 123-45-67" required />
+                      </div>
+                      <div>
+                        <Label htmlFor="email-diag">Email</Label>
+                        <Input id="email-diag" type="email" placeholder="email@example.com" />
+                      </div>
+                      <div>
+                        <Label htmlFor="child-age">Возраст ребёнка</Label>
+                        <Input id="child-age" placeholder="7 лет" required />
+                      </div>
+                      <div>
+                        <Label>Выберите дату</Label>
+                        <Calendar
+                          mode="single"
+                          selected={date}
+                          onSelect={setDate}
+                          className="rounded-md border"
+                          disabled={(date) => date < new Date()}
+                        />
+                      </div>
+                      <div>
+                        <Label>Выберите время</Label>
+                        <div className="grid grid-cols-3 gap-2 mt-2">
+                          {timeSlots.map((time) => (
+                            <Button
+                              key={time}
+                              type="button"
+                              variant={selectedTime === time ? 'default' : 'outline'}
+                              onClick={() => setSelectedTime(time)}
+                              className="w-full"
+                            >
+                              {time}
+                            </Button>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <Label htmlFor="message-diag">Опишите трудности ребёнка</Label>
+                        <Textarea id="message-diag" placeholder="Например: путает буквы, пропускает окончания..." rows={3} />
+                      </div>
+                    </div>
+                    <Button type="submit" className="w-full bg-gradient-to-r from-primary to-accent">
+                      Отправить заявку
+                    </Button>
+                  </form>
+                </DialogContent>
+              </Dialog>
+            </Card>
           </div>
         </div>
       </section>
