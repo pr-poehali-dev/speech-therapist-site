@@ -337,26 +337,28 @@ export default function Index() {
                   <div className="text-5xl">📚</div>
                   <CardTitle className="text-2xl">Дислексия</CardTitle>
                 </div>
-                <CardDescription className="text-base leading-relaxed space-y-3">
-                  <p className="font-semibold text-foreground">Трудности с чтением? Мы поможем!</p>
-                  <ul className="space-y-2 text-left">
-                    <li className="flex items-start gap-2">
-                      <span className="text-accent text-xl">✓</span>
-                      <span>Улучшаем узнавание букв и слов</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-accent text-xl">✓</span>
-                      <span>Развиваем фонематический слух</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-accent text-xl">✓</span>
-                      <span>Учим читать плавно и с пониманием</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-accent text-xl">✓</span>
-                      <span>Игровые упражнения на каждом занятии</span>
-                    </li>
-                  </ul>
+                <CardDescription className="text-base leading-relaxed">
+                  <div className="space-y-3">
+                    <div className="font-semibold text-foreground">Трудности с чтением? Мы поможем!</div>
+                    <ul className="space-y-2 text-left">
+                      <li className="flex items-start gap-2">
+                        <span className="text-accent text-xl">✓</span>
+                        <span>Улучшаем узнавание букв и слов</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-accent text-xl">✓</span>
+                        <span>Развиваем фонематический слух</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-accent text-xl">✓</span>
+                        <span>Учим читать плавно и с пониманием</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-accent text-xl">✓</span>
+                        <span>Игровые упражнения на каждом занятии</span>
+                      </li>
+                    </ul>
+                  </div>
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -367,26 +369,28 @@ export default function Index() {
                   <div className="text-5xl">✍️</div>
                   <CardTitle className="text-2xl">Дисграфия</CardTitle>
                 </div>
-                <CardDescription className="text-base leading-relaxed space-y-3">
-                  <p className="font-semibold text-foreground">Сложности с письмом? Поможем справиться!</p>
-                  <ul className="space-y-2 text-left">
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary text-xl">✓</span>
-                      <span>Исправляем ошибки на письме</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary text-xl">✓</span>
-                      <span>Развиваем мелкую моторику</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary text-xl">✓</span>
-                      <span>Формируем правильное письмо</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary text-xl">✓</span>
-                      <span>Творческие задания и прописи</span>
-                    </li>
-                  </ul>
+                <CardDescription className="text-base leading-relaxed">
+                  <div className="space-y-3">
+                    <div className="font-semibold text-foreground">Сложности с письмом? Поможем справиться!</div>
+                    <ul className="space-y-2 text-left">
+                      <li className="flex items-start gap-2">
+                        <span className="text-primary text-xl">✓</span>
+                        <span>Исправляем ошибки на письме</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-primary text-xl">✓</span>
+                        <span>Развиваем мелкую моторику</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-primary text-xl">✓</span>
+                        <span>Формируем правильное письмо</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-primary text-xl">✓</span>
+                        <span>Творческие задания и прописи</span>
+                      </li>
+                    </ul>
+                  </div>
                 </CardDescription>
               </CardHeader>
             </Card>
